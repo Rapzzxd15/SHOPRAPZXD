@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP RAPZZXD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #0f0c29);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            min-height: 100vh;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        h1 {
+            font-family: 'Bungee', cursive;
+            font-size: 3.5rem;
+            color: #4facfe;
+            text-shadow: 0 0 10px rgba(79, 172, 254, 0.8),
+                         0 0 20px rgba(79, 172, 254, 0.6),
+                         0 0 30px rgba(79, 172, 254, 0.4);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1::after {
+            content: 'WELCOME TO SHOP RAPZZXD';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            color: transparent;
+            z-index: -1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(to right, #1a2a6c, #3a7bd5);
+            -webkit-background-clip: text;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            font-size: 1rem;
+        }
+        
+        .tab-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            color: white;
+            box-shadow: 0 5px 20px rgba(79, 172, 254, 0.5);
+            border-color: transparent;
+        }
+        
+        .tab-content {
+            display: none;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .product:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        
+        .product-price {
+            font-size: 1.1rem;
+            color: #00ffaa;
+            margin-bottom: 0;
+        }
+        
+        .product-action {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-wa, .btn-telegram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-wa {
+            background: #25D366;
+        }
+        
+        .btn-telegram {
+            background: #0088cc;
+        }
+        
+        .btn-wa:hover, .btn-telegram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-wa i, .btn-telegram i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info a {
+            text-decoration: none;
+        }
+        
+        .highlight {
+            color: #4facfe;
+            font-weight: 600;
+        }
+        
+        .promo-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            transform: rotate(-5deg);
+            animation: pulse 2s infinite;
+            font-weight: 700;
+        }
+        
+        @keyframes pulse {
+            0% { transform: rotate(-5deg) scale(1); }
+            50% { transform: rotate(-5deg) scale(1.1); }
+            100% { transform: rotate(-5deg) scale(1); }
+        }
+        
+        .profile-item {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .profile-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #4facfe;
+        }
+        
+        .profile-item a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .profile-item a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        .profile-item a i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .thanks {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 30px;
+            color: #4facfe;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tab-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .tab-content {
+                padding: 20px;
+            }
+            
+            .product {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .product-action {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WELCOME TO SHOP RAPZZXD</h1>
+        </header>
+        
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="openTab('panel-bot')">PANEL BOT WA</button>
+            <button class="tab-btn" onclick="openTab('murbug')">MURBUG AUTO C1</button>
+            <button class="tab-btn" onclick="openTab('profile')">PROFIL SAYA</button>
+        </div>
+        
+        <div id="panel-bot" class="tab-content active">
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">1GB</div>
+                    <div class="product-price">HARGA 2K</div>
+                </div>
+                <div class="product-action">
+                    <a href="https://wa.me/6283142735216" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">2GB</div>
+                    <div class="product-price">HARGA 3K</div>
+                </div>
+                <div class="product-action">
+                    <a href="https://wa.me/6283142735216" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">3GB</div>
+                    <div class="product-price">HARGA 4K</div>
+                </div>
+                <div class="product-action">
+                    <a href="https://wa.me/6283142735216" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">4GB</div>
+                    <div class="product-price">HARGA 5K</div>
+                </div>
+                <div class="product-action">
+                    <a href="https://wa.me/6283142735216" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">5GB</div>
+                    <div class="product-price">HARGA 6K</div>
+                </div>
+                <div class="product-action">
+                    <a href="https://wa.me/6283142735216" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">10GB</div>
+                    <div class="product-price">HARGA 8K</div>
+                </div>
+                <div class="product-action">
+                    <a href="https://wa.me/6283142735216" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">UNLIMITED <span class="promo-badge">PROMO</span></div>
+                    <div class="product-price">HARGA 4K</div>
+                </div>
+                <div class="product-action">
+                    <a href="https://wa.me/6283142735216" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <a href="https://wa.me/6283142735216" class="btn-wa" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://t.me/rapzstrp" class="btn-telegram" target="_blank">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+            </div>
+        </div>
+        
+        <div id="murbug" class="tab-content">
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">MURBUG / MURID BUG</div>
+                    <div class="product-price">5K</div>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">OWN MURBUG</div>
+                    <div class="product-price">10K</div>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="product-info">
+                    <div class="product-title">SC BUG GACOR</div>
+                    <div class="product-price">15K</div>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <a href="https://wa.me/6283142735216" class="btn-wa" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://t.me/rapzstrp" class="btn-telegram" target="_blank">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+            </div>
+        </div>
+        
+        <div id="profile" class="tab-content">
+            <div class="profile-item">
+                <h3>My Name</h3>
+                <p>Rapzzxd</p>
+            </div>
+            
+            <div class="profile-item">
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/6283142735216" target="_blank">
+                    <i class="fab fa-whatsapp"></i> +6283142735216
+                </a>
+            </div>
+            
+            <div class="profile-item">
+                <h3>Telegram</h3>
+                <a href="https://t.me/rapzstrp" target="_blank">
+                    <i class="fab fa-telegram"></i> t.me/rapzstrp
+                </a>
+            </div>
+            
+            <div class="thanks">
+                THANKS FOR SEL IN MY SHOP
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Remove active class from all buttons
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the selected tab and mark its button as active
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
